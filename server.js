@@ -22,9 +22,12 @@ mongoose.connect(mongoURI, {
 .then(() => console.log("Connected to MongoDB Atlas"))
 .catch((err) => console.error("Error connecting to MongoDB:", err));
 
+const employeeRoutes = require("./routes/employeeRoutes");
+app.use("/employees", employeeRoutes);
+
 // Sample route to test the server
-app.get('/', (req, res) => {
-  res.send("Welcome to the Employee IT Management API!");
+app.get("/", (req, res) => {
+  res.send("Employee IT Management API is running...");
 });
 
 // Server setup
