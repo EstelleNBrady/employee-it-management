@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Employee = require("../models/employee");
+const getGoogleUsers = require("../utils/googleSync");
+const syncGoogleUsers = require("../syncGoogleUsers");  // Correct path based on your project structure
 
 // Create Employee
 router.post("/", async (req, res) => {
@@ -12,6 +14,19 @@ router.post("/", async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+
+// Sync route for testing
+// In your employeeRoutes.js file
+router.get('/sync', async (req, res) => {
+  try {
+    await syncGoogleUsers(); // Call the exported function
+    res.status(200).json({ message: 'Users synced successfully' });
+  } catch (err) {
+    console.error("Sync Error:", err);
+    res.status(500).json({ error: 'Failed to sync users', message: err.message });
+  }
+});
+  
 
 // Get All Employees
 router.get("/", async (req, res) => {
