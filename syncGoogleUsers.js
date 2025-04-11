@@ -29,7 +29,7 @@ async function fetchUsers() {
 
   const res = await service.users.list({
     customer: "my_customer",
-    maxResults: 100,
+    maxResults: 200,
     orderBy: "email",
   });
 

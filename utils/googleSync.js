@@ -10,7 +10,7 @@ const getGoogleUsers = async () => {
   const admin = google.admin({ version: "directory_v1", auth });
   const res = await admin.users.list({
     customer: "my_customer",
-    maxResults: 50,
+    maxResults: 200,
     orderBy: "email",
   });
   return res.data.users;

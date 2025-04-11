@@ -9,8 +9,7 @@ const bodyParser = require('body-parser'); // For parsing incoming request bodie
 const app = express();
 
 // Middleware
-app.use(cors()); // Allow cross-origin requests
-app.use(bodyParser.json()); // Parse incoming JSON data
+app.use(cors({ origin: "http://localhost:5173" })); // Replace with your frontend's URLapp.use(bodyParser.json()); // Parse incoming JSON data
 
 // MongoDB connection using environment variable for security
 const mongoURI = process.env.MONGO_URI;  // Read from .env file
