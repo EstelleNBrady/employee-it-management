@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EstelleNBrady/employee-it-management.git"
   },
+  "type":"module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -25,5 +26,8 @@
     "google-auth-library": "^9.15.1",
     "googleapis": "^148.0.0",
     "mongoose": "^8.13.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

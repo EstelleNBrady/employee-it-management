@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Employee = require("../models/employee");
-const getGoogleUsers = require("../utils/googleSync");
+const Employee = require("../backend/models/employee");
 const syncGoogleUsers = require("../syncGoogleUsers");  // Correct path based on your project structure
 
 // Create Employee

@@ -1,10 +1,10 @@
 // Import required packages
-require('dotenv').config(); // Loads environment variables from .env file
-const express = require('express'); // Express framework
-const mongoose = require('mongoose'); // MongoDB ODM
-const cors = require('cors'); // CORS to allow cross-origin requests
-const bodyParser = require('body-parser'); // For parsing incoming request bodies
-
+import dotenv from "dotenv"; // For loading environment variables
+dotenv.config(); // Load environment variables from .env file
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors"; // For enabling CORS
+import bodyParser from "body-parser"; // For parsing incoming request bodies
 // Initialize express app
 const app = express();
 
@@ -21,7 +21,7 @@ mongoose.connect(mongoURI, {
 .then(() => console.log("Connected to MongoDB Atlas"))
 .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-const employeeRoutes = require("./routes/employeeRoutes");
+import employeeRoutes from "../routes/employeeRoutes.js"; // Import employee routes
 app.use("/employees", employeeRoutes);
 
 // Sample route to test the server
@@ -32,5 +32,5 @@ app.get("/", (req, res) => {
 // Server setup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log("Server running on port http://localhost:5000");
 });

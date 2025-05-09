@@ -2,10 +2,10 @@ const { google } = require("googleapis");
 const fs = require("fs");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const Employee = require("./models/employee");
+const Employee = require("./backend/models/employee");
 
 // Load Service Account Credentials
-const credentials = JSON.parse(fs.readFileSync("C:\\Users\\ebrady\\employee-it-management-1\\config\\employee-it-management-81244917bfe9.json"));
+const credentials = JSON.parse(fs.readFileSync("C:\\Users\\ebrady\\employee-it-management-1\\backend\\config\\employee-it-management-81244917bfe9.json"));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
